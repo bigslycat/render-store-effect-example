@@ -1,11 +1,6 @@
 /* @flow */
 
-import * as React from 'react';
-
-import { Root } from '../Root';
-import { Button } from '../Button';
-
-export const Key = (props: {}) => (
+export const Key = styled((props: {}) => (
   <Root
     as='span'
     css={{
@@ -16,4 +11,14 @@ export const Key = (props: {}) => (
     {...props}>
     Enter
   </Root>
-);
+))`
+  ${Button.toString()}:not([disabled]) & {
+    color: #999;
+  }
+  :before {
+    content: '[';
+  }
+  :after {
+    content: ']';
+  }
+`;
