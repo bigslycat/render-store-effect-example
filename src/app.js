@@ -1,6 +1,7 @@
 /* @flow */
 
 import * as React from 'react';
+import { hot } from 'react-hot-loader/root';
 import { Global, css } from '@emotion/core';
 
 import { getUser, store } from './services/github';
@@ -21,7 +22,7 @@ const globals = css`
     padding: 0;
   }
 
-  #app-root {
+  #root {
     height: 100%;
     display: flex;
     justify-content: center;
@@ -80,4 +81,4 @@ const App = () => {
   );
 };
 
-export default App;
+export default hot(App);
